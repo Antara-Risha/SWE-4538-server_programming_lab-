@@ -1,5 +1,6 @@
 const Hello = () => {
     console.log("Hello world");
 };
-module.exports = { Hello };
-console.log(module);
+
+const name = 'Antara Risha';
+module.exports = { Hello, name };
