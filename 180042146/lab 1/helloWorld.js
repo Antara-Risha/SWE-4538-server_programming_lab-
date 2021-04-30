@@ -1,4 +1,5 @@
 const Hello = () => {
     console.log("Hello world");
 };
-Hello();
+module.exports = { Hello };
+console.log(module);
