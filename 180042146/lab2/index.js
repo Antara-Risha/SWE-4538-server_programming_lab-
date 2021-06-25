@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+dotenv.config();
+
 //conncet to db
-mongoose.connect('mongodb+srv://raisa:dhupa1468@cluster0.vfn3w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect( 
+    process.env.DB_CONNECT,
 { useUnifiedTopology: true } ,
 () => console.log('connected to DB'));
 //import Routes
