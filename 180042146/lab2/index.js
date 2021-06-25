@@ -3,6 +3,9 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+//import Routes
+const authRoute = require('./routes/auth');
+
 dotenv.config();
 
 //conncet to db
@@ -10,8 +13,10 @@ mongoose.connect(
     process.env.DB_CONNECT,
 { useUnifiedTopology: true } ,
 () => console.log('connected to DB'));
-//import Routes
-const authRoute = require('./routes/auth');
+
+
+//middleware
+app.use(express.json());
 
 //Route Middlewires
 app.use('/api/user',authRoute);
