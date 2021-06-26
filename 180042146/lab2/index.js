@@ -7,19 +7,25 @@ const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 
 dotenv.config();
+app.use(authRoute)
 
 //conncet to db
 mongoose.connect( 
     process.env.DB_CONNECT,
-{ useUnifiedTopology: true } ,
+{ useNewUrlParser:true ,useUnifiedTopology: true } ,
 () => console.log('connected to DB'));
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
 
 
 //middleware
-app.use(express.json());
+//app.use(express.json());
 
 //Route Middlewires
-app.use('/api/user',authRoute);
+//app.use('/api/user',authRoute);
 
 
 
