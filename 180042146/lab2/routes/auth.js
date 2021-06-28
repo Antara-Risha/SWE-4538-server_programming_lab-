@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
    // console.log(email);
     
    try {
-    const savedUser = await new userSchema(user).save();
+    const savedUser = await 
     res.send(savedUser);
     console.log('rasia');
  } catch(err){
