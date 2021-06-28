@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+//const User = require('./model/User');
 
 //import Routes
 const authRoute = require('./routes/auth');
