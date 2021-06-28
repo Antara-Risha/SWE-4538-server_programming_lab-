@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+//const postRoute = require('./routes/posts');
 //const User = require('./model/User');
 
 //import Routes
@@ -27,6 +28,7 @@ mongoose.set('useCreateIndex', true);
 
 //Route Middlewires
 //app.use('/api/user',authRoute);
+//app.use('/api/posts',postRoute);
 
 
 
