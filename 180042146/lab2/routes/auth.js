@@ -7,16 +7,16 @@ router.use(bodyParser.json());
 
 
 router.post('/register', async (req, res) => {
-    const {name,email,password} = req.body;
-//    const user = {
-//        name: req.body.name,
-//        email: req.body.email,
-//        password: req.body.password
-//    };
+    // const {name,email,password} = req.body;
+   const user = {
+       name: req.body.name,
+       email: req.body.email,
+       password: req.body.password
+   };
 
-      // const savedUser = await new userSchema(user).save();
-       //res.send(savedUser);
-    console.log(email);
+      const savedUser = await new userSchema(user).save();
+       res.send(savedUser);
+   // console.log(email);
     
     
       
