@@ -14,11 +14,18 @@ router.post('/register', async (req, res) => {
        password: req.body.password
    };
 
-      const savedUser = await new userSchema(user).save();
-       res.send(savedUser);
+    //   const savedUser = await new userSchema(user).save();
+    //    res.send(savedUser);
    // console.log(email);
     
-    
+   try {
+    const savedUser = await new userSchema(user).save();
+    res.send(savedUser);
+    console.log('rasia');
+ } catch(err){
+    res.status(400).send(err);
+
+}
       
       
    

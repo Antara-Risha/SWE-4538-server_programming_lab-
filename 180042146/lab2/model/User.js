@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+//const Schema = mongoose.Schema;
 //const validator = require('validator')
 
 const userSchema = new mongoose.Schema({
@@ -25,9 +26,12 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+    
   
-});
+},
+{ collection: "blogs" });
 
-
+const Blog  = mongoose.model('Blog', userSchema);
+module.exports = Blog;
 
 module.exports = mongoose.model('User', userSchema);
