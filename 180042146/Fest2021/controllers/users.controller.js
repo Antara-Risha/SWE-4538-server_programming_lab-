@@ -1,5 +1,6 @@
 const User = require('../models/User.model');
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 
 
@@ -8,10 +9,15 @@ const bcrypt = require('bcryptjs');
 const getLogin = (req,res) =>{
     res.render("users/login.ejs");
 };
- const postLogin = (req,res)=>{
-     const {email,password} =req.body;
-     console.log(email);
-     console.log(password);
+ const postLogin = (req,res,next)=>{
+    passport.authenticate("local", {
+        successRedirect: "/dashboard",
+        failureRedirect: "/users/login",
+        failureFlash: true,
+      })(req, res, next);
+     //const {email,password} =req.body;
+    //  console.log(email);
+    //  console.log(password);
  };
   
  const getRegister = (req,res) =>{
