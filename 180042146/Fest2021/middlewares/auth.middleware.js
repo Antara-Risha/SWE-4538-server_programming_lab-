@@ -15,4 +15,4 @@ const  addUserData = (req, res, next) =>
     next();
 
 };
-module.exports = ensureAuthenticated;
+module.exports = { ensureAuthenticated,addUserData };
