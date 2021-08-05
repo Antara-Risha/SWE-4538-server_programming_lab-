@@ -1,7 +1,7 @@
 const MathOlympiad = require("../models/MathOlympiad.model");
 
 const getMO = (req,res) => {
-    res.render("math-olympiad/register.ejs");
+    res.render("math-olympiad/register.ejs", { error: req.flash("error") });
 };
 const postMO = (req,res) => {
     const { name, category, contact, email, institution, tshirt } = req.body;
