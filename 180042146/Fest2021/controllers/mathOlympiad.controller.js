@@ -79,11 +79,22 @@ const getMOList = (req, res) => {
         });
       });
   };
-const deleteMO = (req,res) => {
-    const id = req.params.id;
-    console.log(id);
-    res.render("math-olympiad/list.ejs");
-};
+  const deleteMO = (req, res) => {
+    let error = "";
+  
+    MathOlympiad.deleteOne({ _id: req.params.id })
+      .then(() => {
+        let error = "Data has been deleted successfully!";
+        req.flash("error", error);
+        res.redirect("/MathOlympiad/list");
+      })
+      .catch(() => {
+        let error = "Failed to delete data";
+        req.flash("error", error);
+        res.redirect("/MathOlympiad/list");
+      });
+  };
+  
 
 
 module.exports={ getMO, postMO,getMOList,deleteMO};
