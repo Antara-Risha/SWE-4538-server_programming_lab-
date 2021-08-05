@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated, addUserData ,} = require("../middlewares/auth.middleware");
-const {getMO,postMO, getMOList, deleteMO } = require('./../controllers/mathOlympiad.controller');
+const {getMO, postMO, getMOList, deleteMO } = require('./../controllers/mathOlympiad.controller');
 
 
 

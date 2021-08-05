@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const MOSchema = new.mongoose.Schema({
+const MOSchema = new mongoose.Schema({
     name:{
         type : String,
         require: true,
@@ -37,7 +37,7 @@ const MOSchema = new.mongoose.Schema({
         require: true,
     },
     date:{
-        type : date,
+        type : Date,
         default: Date.now,
     },
 
